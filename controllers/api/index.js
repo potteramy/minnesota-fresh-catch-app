@@ -5,6 +5,6 @@ const lakeRoutes = require('./lakeRoutes');
 
 router.use('/user', userRoutes);
 router.use('/fish', fishRoutes);
-router.use('/lake', lakeRoutes);
+//router.use('/lake', lakeRoutes);
 
 module.exports = router;
