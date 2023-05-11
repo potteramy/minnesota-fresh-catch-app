@@ -13,7 +13,11 @@ Lake.init(
       primaryKey: true,
       autoIncrement: true
     },
-    location_name: {
+    lake_name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    city: {
       type: DataTypes.STRING,
       allowNull: false
     }
