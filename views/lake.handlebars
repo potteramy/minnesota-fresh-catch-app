@@ -1,0 +1,24 @@
+<div class="list of lakes in Minnesota">
+  {{#if catchesByLake}}
+    {{#each catchesByLake}}
+      <div class="lake-catches">
+        <h3 class="lake-name">{{this.lake}}</h3>
+          <div class="catch-header">
+            <div class="catch-species">Species</div>
+            <div class="catch-size">Size</div>
+            <div class="catch-date">Date Caught</div>
+          </div>
+          
+          {{#each this.catches}}
+            <div class="catch-row">
+              <div class="catch-species">{{this.species}}</div>
+              <div class="catch-size">{{this.size}}</div>
+              <div class="catch-date">{{this.date}}</div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    {{/each}}
+  {{else}}
+    <p>There are no catches in this lake.</p>
+</div>
