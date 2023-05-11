@@ -1,5 +1,5 @@
 <div class="name">
-  <h2>{{user_name}}</h2>
+  <h2>{{first_name}}</h2>
 </div>
 
 <div class="card w-75">
@@ -9,6 +9,8 @@
       <form class="newCatch">
         <label for="fishType">type of fish:</label>
         <input type="text" class="fishInput" name="fishType"/>
+        <label for="fishLength">length of fish (inches):</label>
+        <input type="text" class="lengthInput" name="fishLength"/>
         <label for="lakeName">lake name:</label>
         <input type="text" class="lakeInput" name="lakeName"/>
         <label for="dateInput">date caught:</label>
@@ -18,9 +20,17 @@
       <a href="#" class="btn btn-primary">Save My Catch!</a>
   </div>  
 </div>
-{{#if fishData}}
+<h5>Previous Catches:</h5>
+{{#each fishData}}
 <div class="card catchList">
   <div class="card-body previousCatches">
-  
+  {{#if (eq user_id)}}
+    <div>
+      <p>Species: {{fish_type}}</p>
+      <p>Length: {{fish_length}} inches</p>
+      <p>Caught on: {{date_caught}}</p>
+    </div>
+  {{/if}}
   </div>
 </div>
+{{/each}}
