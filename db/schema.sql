@@ -1,6 +1,7 @@
 DROP DATABASE IF EXISTS freshCatch;
 CREATE DATABASE freshCatch;
 
+/*
 CREATE TABLE userData (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	first_name VARCHAR(50),
@@ -15,7 +16,9 @@ CREATE TABLE fishData (
 	fish_length DECIMAL(4,2),
 	user_id INT,
 	date_caught DATE,
+	lake_id INT,
 	FOREIGN KEY (user_id) REFERENCES userData(id)
+	FOREIGN KEY (lake_id) REFERENCES lakeData(id)
 );
 
 CREATE TABLE lakeData (
@@ -23,3 +26,4 @@ CREATE TABLE lakeData (
 	lake_name TEXT,
 	city VARCHAR(50)
 );
+*/

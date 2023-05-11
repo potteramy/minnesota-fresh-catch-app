@@ -1,0 +1,26 @@
+<div class="name">
+  <h2>{{user_name}}</h2>
+</div>
+
+<div class="card w-75">
+  <div class="card-body">
+    <h5 class="card-title">Log a fresh catch!</h5>
+    <div class="formContainer">
+      <form class="newCatch">
+        <label for="fishType">type of fish:</label>
+        <input type="text" class="fishInput" name="fishType"/>
+        <label for="lakeName">lake name:</label>
+        <input type="text" class="lakeInput" name="lakeName"/>
+        <label for="dateInput">date caught:</label>
+        <input type="date" class="dateInput" name="dateInput"/>
+      </form>
+    </div>
+      <a href="#" class="btn btn-primary">Save My Catch!</a>
+  </div>  
+</div>
+{{#if fishData}}
+<div class="card catchList">
+  <div class="card-body previousCatches">
+  
+  </div>
+</div>

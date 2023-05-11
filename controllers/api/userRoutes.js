@@ -1,10 +1,16 @@
 const router = require("express").Router();
 const User = require("../../models/User");
 
-router.post("/", async (req, res) => {
-  try {
-    const userData = await User.create(req.body);
 
+// Create a new user, then set session properties for user_id and logged_in, w/ logged_in property set to true
+router.post('/', async (req, res) => {
+  try {
+    const userData = await User.create({
+      email: req.body.email,
+      password: req.body.password,
+    });
+
+    //session variable "logged_in"
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
@@ -17,7 +23,8 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.post("/login", async (req, res) => {
+//Check login credentials are valid, 
+router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
 

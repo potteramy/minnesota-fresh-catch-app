@@ -1,5 +1,7 @@
+
 const router = require("express").Router();
 const Fish = require("../../models/Fish");
+const withAuth = require("../../utils/auth")
 
 //Get all fish
 router.get("/", (req, res) => {
@@ -16,7 +18,7 @@ router.get("/:id", (req, res) => {
 });
 
 //Create a fish
-router.post("/", async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
     const newFish = await Fish.create({
       ...req.body,
@@ -29,8 +31,10 @@ router.post("/", async (req, res) => {
   }
 });
 
+
 //Delete a fish
-router.delete("/:id", async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
+
   try {
     const fishData = await Fish.destroy({
       where: {
