@@ -15,7 +15,9 @@ CREATE TABLE fishData (
 	fish_length DECIMAL(4,2),
 	user_id INT,
 	date_caught DATE,
+	lake_id INT,
 	FOREIGN KEY (user_id) REFERENCES userData(id)
+	FOREIGN KEY (lake_id) REFERENCES lakeData(id)
 );
 
 CREATE TABLE lakeData (
