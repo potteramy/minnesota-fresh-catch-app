@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Minnesota Fish Catch Tracker - Log In</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Minnesota Fish Catch Tracker</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li class="active"><a href="#">Log In</a></li>
+          <li><a href="#">Sign Up</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Log In</h2>
+      <form action="login" method="get post">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        
+        <button type="submit">Log In</button>
+      </form>
+      
+      {{#iferrorMessage}}
+      <p class="error">{{errorMessage}}</p>
+      {{/if}}
+      
+      <p>Make an account <a href="/login">Sign up</a> now.</p>
+    </main>
+    
+    <footer>
+      <p>&copy; Minnesota Fish Catch Tracker</p>
+    </footer>
+  </body>
+</html>
