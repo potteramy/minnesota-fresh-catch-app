@@ -1,7 +1,22 @@
-const router = require('express').Router();
-const { Fish } = require('../../models');
+const router = require("express").Router();
+const Fish = require("../../models/Fish");
 
-router.post('/', async (req, res) => {
+//Get all fish
+router.get("/", (req, res) => {
+  Fish.findAll().then((fishData) => {
+    res.json(fishData);
+  });
+});
+
+// Get a single fish
+router.get("/:id", (req, res) => {
+  Fish.findByPk(req.params.id).then((fishData) => {
+    res.json(fishData);
+  });
+});
+
+//Create a fish
+router.post("/", async (req, res) => {
   try {
     const newFish = await Fish.create({
       ...req.body,
@@ -14,21 +29,23 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.delete('/:id', async (req, res) => {
+//Delete a fish
+router.delete("/:id", async (req, res) => {
   try {
     const fishData = await Fish.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
-      },
+      }
     });
 
     if (!fishData) {
-      res.status(404).json({ message: 'No fish found with this id!' });
+      res.status(404).json({ message: "No fish found with this id!" });
       return;
     }
 
     res.status(200).json(fishData);
+
   } catch (err) {
     res.status(500).json(err);
   }
