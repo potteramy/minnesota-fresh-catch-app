@@ -1,0 +1,48 @@
+<div class="name">
+  <h2>{{first_name}}</h2>
+</div>
+
+<div class="card w-75">
+  <div class="card-body">
+    <h5 class="card-title">Log a fresh catch!</h5>
+    <div class="formContainer">
+      <form class="newCatch">
+        <label for="fishType">type of fish:</label>
+        <input type="text" class="fishInput" name="fishType"/>
+        <label for="fishLength">length of fish in inches:</label>
+        <input type="number" class="lengthInput" name="fishLength"/>
+        <label for="lakeName">choose a lake:</label>
+        <select class="lake" name="lakeName">
+          <option value="Lake Harriet">Lake Harriet</option>
+          <option value="Lake of the Isles">Lake of the Isles</option>
+          <option value="Bde Maka Ska">Bde Maka Ska</option>
+          <option value="Cedar Lake">Cedar Lake</option>
+          <option value="Lake Nokomis">Lake Nokomis</option>
+          <option value="Brownie Lake">Brownie Lake</option>
+          <option value="Lake Hiawatha">Lake Hiawatha</option>
+          <option value="Wirth Lake">Wirth Lake</option>
+          <option value="Powderhorn Lake">Powderhorn Lake</option>
+          <option value="Taft Lake">Taft Lake</option>
+          <option value="Loring Pond">Loring Pond</option>
+          <option value="Long Meadow Lake">Long Meadow Lake</option>
+        <label for="dateInput">date caught:</label>
+        <input type="date" class="dateInput" name="dateInput"/>
+      </form>
+    </div>
+      <a href="#" class="btn btn-primary">Save My Catch!</a>
+  </div>  
+</div>
+<h5>Previous Catches:</h5>
+{{#each fishData}}
+<div class="card catchList">
+  <div class="card-body previousCatches">
+  {{#if (eq user_id)}}
+    <div>
+      <p>Species: {{fish_type}}</p>
+      <p>Length: {{fish_length}} inches</p>
+      <p>Caught on: {{date_caught}}</p>
+    </div>
+  {{/if}}
+  </div>
+</div>
+{{/each}}
