@@ -5,7 +5,7 @@ const router = require("express").Router()
 
 const withAuth = router.use("*", (req, res, next) => {
   if (!req.session.logged_in) {
-    res.redirect("../public/js/login");
+    res.redirect("/login");
   } else {
     next(); //pass off the req down the route chain
   }
