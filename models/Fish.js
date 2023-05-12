@@ -18,29 +18,7 @@ Fish.init(
       allowNull: false
     },
     fish_length: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
-    user_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'User',
-        key: 'id',
-        unique: true
-      }
-    },
-    lake_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'Lake',
-        key: 'id',
-        unique: true
-      }
-    },
-    date_caught: {
-      type: DataTypes.DATE,
+      type: DataTypes.FLOAT,
       allowNull: false
     },
   },
@@ -49,7 +27,7 @@ Fish.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'fish'
+    modelName: 'Fish'
   }
 );
 

@@ -1,10 +1,15 @@
 const Fish = require('./Fish');
-const Lake = require('./Lake');
+const Catch = require('./Catch');
 const User = require('./User');
 
-Fish.belongsToMany(User, {});
-Fish.belongsToMany(Lake, {});
+Catch.belongsTo(Fish, {
+    foreignKey: 'fish_id',
+    unique: false
+})
+Catch.belongsTo(User, {
+  foreignKey: 'user_id',
+  unique: false
+})
 
-module.exports = {Fish, Lake, User}
+module.exports = {Fish, Catch, User};
   
-

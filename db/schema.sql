@@ -1,5 +1,5 @@
-DROP DATABASE IF EXISTS freshCatch;
-CREATE DATABASE freshCatch;
+DROP DATABASE IF EXISTS freshcatch;
+CREATE DATABASE freshcatch;
 
 /*
 CREATE TABLE userData (
@@ -26,4 +26,3 @@ CREATE TABLE lakeData (
 	lake_name TEXT,
 	city VARCHAR(50)
 );
-*/
