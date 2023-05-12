@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const Lake = require("../../models/Lake");
+const Lake = require("../../models/Catch");
 
 //Get all lakes
 router.get("/", (req, res) => {
