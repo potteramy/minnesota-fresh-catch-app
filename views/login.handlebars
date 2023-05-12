@@ -14,4 +14,19 @@
       <p class="error">{{errorMessage}}</p>
       {{/if}}
       
-      <p>Make an account <a href="/login">Sign up</a> now.</p>
+      <p>Make an account <a href="/login.js">Sign up</a> now.</p>
+
+       <h3>Sign Up</h3>
+    <form action="sign up" method="get post">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required><br>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required><br>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required><br>
+
+      <input type="submit" value="Submit">
+    </form>
+<script src="./js/login.js"></script>
