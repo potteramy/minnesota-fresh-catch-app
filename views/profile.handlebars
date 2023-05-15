@@ -2,17 +2,17 @@
   <h2>{{first_name}}</h2>
 </div>
 
-<div class="card w-75">
+<div class="card w-100">
   <div class="card-body">
     <h5 class="card-title">Log a fresh catch!</h5>
     <div class="formContainer">
       <form class="newCatch">
-        <label for="fishType">type of fish:</label>
-        <input type="text" class="fishInput" name="fishType"/>
-        <label for="fishLength">length of fish in inches:</label>
-        <input type="number" class="lengthInput" name="fishLength"/>
-        <label for="lakeName">choose a lake:</label>
-        <select class="lake" name="lakeName">
+        <label for="fishType" class="form-label">type of fish:</label>
+        <input type="text" class="fishInput form-control" name="fishType"/>
+        <label for="fishLength" class="form-label">length of fish in inches:</label>
+        <input type="number" class="lengthInput form-control" name="fishLength"/><br/>
+        <label for="lakeName" class="form-label">choose a lake:</label>
+        <select class="lake form-label" name="lakeName">
           <option value="Lake Harriet">Lake Harriet</option>
           <option value="Lake of the Isles">Lake of the Isles</option>
           <option value="Bde Maka Ska">Bde Maka Ska</option>
@@ -25,8 +25,8 @@
           <option value="Taft Lake">Taft Lake</option>
           <option value="Loring Pond">Loring Pond</option>
           <option value="Long Meadow Lake">Long Meadow Lake</option>
-        <label for="dateInput">date caught:</label>
-        <input type="date" class="dateInput" name="dateInput"/>
+        <label for="dateInput" class="form-label">date caught:</label>
+        <input type="date" class="dateInput form-control" name="dateInput"/><br/>
       </form>
     </div>
       <a href="#" class="btn btn-primary" type="submit">Save My Catch!</a>

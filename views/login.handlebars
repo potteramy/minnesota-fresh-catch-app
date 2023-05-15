@@ -1,14 +1,14 @@
 <div>
-  <h2>Log In</h2>
+  <h2 style="color: white;">Log In</h2>
   <form>
-    <label for="email">Email:</label>
-    <input type="email" id="email-login" name="email" required />
+    <label for="email" class="form-label">Email:</label>
+    <input type="email" class="form-control" id="email-login" name="email" required />
+    <label for="password" class="form-label">Password:</label>
+    <input type="password" class="form-control"id="password-login" name="password" required />
+    <br/>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password-login" name="password" required />
-
-    <button id="login" type="submit">Log in</button>
-  </form>
+    <button class="btn btn-success" id="login" type="submit">Log in</button>
+  </form><br/>
 
   {{#if errorMessage}}
     <p class="error">{{errorMessage}}</p>
@@ -16,29 +16,19 @@
 
   {{! <p>Make an account <a href="/login.js">Sign up</a> now.</p> }}
 
-  <h3>Sign Up</h3>
+  <h3 style="color: white;">Sign Up</h3>
   <form class="signup-form">
-    <label for="signup_first_name">First Name:</label>
-    <input type="text" id="signup_first_name" name="first_name" required /><br
-    />
-
-    <label for="signup_last_name">Last Name:</label>
-    <input type="text" id="signup_last_name" name="last_name" required /><br />
-
-    <label for="signup_email">Email:</label>
-    <input type="email" id="signup_email" name="email" required /><br />
-
-    <label for="signup_password">Password:</label>
-    <input type="password" id="signup_password" name="password" required /><br
-    />
-
-    <a
-      href="/user/:id"
-      class="btn btn-primary"
-      type="submit"
-      value="submit"
-      role="button"
-    >Sign up</a>
+    <label for="signup_first_name" class="form-label">First Name:</label>
+    <input type="text" class="form-control" id="signup_first_name" name="first_name" required />
+    <label for="signup_last_name" class="form-label">Last Name:</label>
+    <input type="text" class="form-control" id="signup_last_name" name="last_name" required />
+    <label for="signup_email" class="form-label">Email:</label>
+    <input type="email" class="form-control" id="signup_email" name="email" required />
+    <label for="signup_password" class="form-label">Password:</label>
+    <input type="password" class="form-control" id="signup_password" name="password" required />
+    <br/>
+    
+    <button class="btn btn-success" href="/user/:id" type="submit" value="submit" role="button">Sign up</button>
   </form>
   <script src="/js/login.js"></script>
 </div>
