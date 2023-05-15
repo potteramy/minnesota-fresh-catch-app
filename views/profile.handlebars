@@ -27,10 +27,11 @@
           <option value="Long Meadow Lake">Long Meadow Lake</option>
         <label for="dateInput">date caught:</label>
         <input type="date" class="dateInput" name="dateInput"/>
-      </form>
+        <button href="#" class="btn btn-primary" type="submit">Save My Catch!</button>
+        </form> 
     </div>
-      <a href="#" class="btn btn-primary" type="submit">Save My Catch!</a>
-  </div>  
+  </div>
+  
 </div>
 <h5>Previous Catches:</h5>
 {{#each fishData}}
@@ -47,3 +48,7 @@
 </div>
 {{/each}}
 <script src="/js/newCatch.js"></script>
+
+<script>document
+  .querySelector('.newCatch')
+  .addEventListener('submit', newFormHandler);</script>
