@@ -1,4 +1,4 @@
-
+  <div>
       <h2>Log In</h2>
       <form action="login" method="get post">
         <label for="email">Email:</label>
@@ -17,7 +17,7 @@
       <p>Make an account <a href="/login.js">Sign up</a> now.</p>
 
        <h3>Sign Up</h3>
-    <form action="sign up" method="get post">
+    <form class="signup-form">
       <label for="first_name">First Name:</label>
       <input type="text" id="first_name" name="first_name" required><br>
 
@@ -30,6 +30,7 @@
       <label for="password">Password:</label>
       <input type="password" id="password" name="password" required><br>
 
-      <a href="profile" class="btn btn-primary" type="submit" value="Submit">Sign up</a>
+      <button class="btn btn-primary signup" type="submit" value="submit">Sign up</button>
     </form>
-<script src="./js/login.js"></script>
+  <script src="/js/login.js"></script>
+</div>
