@@ -9,8 +9,10 @@ const newFormHandler = async function(event) {
   const lengthOfFish = document.querySelector('input[name="fishLength"]').value;
   const nameOfLake = document.querySelector('select[name="lakeName"]').value;
   const dateCaught = document.querySelector('input[name="dateInput"]').value;
+
+  console.log(speciesOfFish)
   
-  await fetch(`/api/post`, {
+  await fetch("/api/catch", {
     method: 'POST',
     body: JSON.stringify({
       speciesOfFish,
@@ -24,7 +26,5 @@ const newFormHandler = async function(event) {
   // document.location.replace('/dashboard');
 };
   
-document
-  .querySelector('.newCatch')
-  .addEventListener('submit', newFormHandler);
+
   

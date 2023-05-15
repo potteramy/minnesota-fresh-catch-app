@@ -46,12 +46,13 @@
           <option value="Taft Lake">Taft Lake</option>
           <option value="Loring Pond">Loring Pond</option>
           <option value="Long Meadow Lake">Long Meadow Lake</option>
-        <label for="dateInput" class="form-label">date caught:</label>
-        <input type="date" class="dateInput form-control" name="dateInput"/><br/>
-      </form>
+        <label class="form-label" for="dateInput">date caught:</label>
+        <input type="date" class="dateInput form-control" name="dateInput"/>
+        <button href="#" class="btn btn-primary" type="submit">Save My Catch!</button>
+        </form> 
     </div>
-      <a href="#" class="btn btn-primary" type="submit">Save My Catch!</a>
-  </div>  
+  </div>
+  
 </div>
 <h5>Previous Catches:</h5>
 {{#each fishData}}
@@ -68,3 +69,7 @@
 </div>
 {{/each}}
 <script src="/js/newCatch.js"></script>
+
+<script>document
+  .querySelector('.newCatch')
+  .addEventListener('submit', newFormHandler);</script>
