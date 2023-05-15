@@ -8,11 +8,14 @@ const loginFormHandler = async (event) => {
 
   //if email and password are submitted, send req.body to server to check for correct login credentials
   if (email && password) {
-    const response = await fetch("/api/users/login", {
+    console.log();
+    const response = await fetch("/api/user/login", {
       method: "POST",
       body: JSON.stringify({ email, password }),
       headers: { "Content-Type": "application/json" },
     });
+
+    console.log(response);
 
     //if the response is true, load homepage
     if (response.ok) {
