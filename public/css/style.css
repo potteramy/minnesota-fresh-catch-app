@@ -8,7 +8,13 @@ body {
   background-attachment: fixed;
   background-size: cover;
   height: 100%;
+  color: white;
+}
+.w-100 {
   color: black;
+}
+.form-control {
+  width: 300px;
 }
 
 footer {
