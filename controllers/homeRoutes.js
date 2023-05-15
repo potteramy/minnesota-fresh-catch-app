@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const User = require('../models');
 const withAuth = require('../utils/auth');
 
 //user/id
@@ -20,6 +20,7 @@ router.get('/user/:id', withAuth, async (req, res) => {
       logged_in: req.session.logged_in
     });
   } catch (err) {
+    console.log("test")
     res.status(500).json(err);
   }
 });
