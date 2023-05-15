@@ -5,9 +5,10 @@ const User = require("../../models/User");
 router.post("/login", async (req, res) => {
   console.log("Login route action called");
   try {
+    
     const userData = await User.findOne({ where: { email: req.body.email } });
     const user = userData.get({ plain: true });
-    console.log(user.id)
+    console.log("test")
 
     if (!user.email) {
       res

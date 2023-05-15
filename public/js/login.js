@@ -8,18 +8,15 @@ const loginFormHandler = async (event) => {
 
   //if email and password are submitted, send req.body to server to check for correct login credentials
   if (email && password) {
-    console.log();
     const response = await fetch("/api/user/login", {
       method: "POST",
       body: JSON.stringify({ email, password }),
       headers: { "Content-Type": "application/json" },
     });
 
-    console.log(response);
-
     //if the response is true, load homepage
     if (response.ok) {
-      document.location.replace("/");
+      document.location.replace("/user/:id");
     } else {
       alert("Failed to log in.");
     }
@@ -42,7 +39,7 @@ async function signupFormHandler(event) {
   });
 
   if (response.ok) {
-    document.location.replace("/user/:id");
+    document.location.replace(`/user/${req.session.user_id}`);
   } else {
     alert("Failed to sign up."); //working
   }
