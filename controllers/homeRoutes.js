@@ -1,18 +1,14 @@
 const router = require('express').Router();
-const User = require('../models');
+const { User } = require('../models');
 const withAuth = require('../utils/auth');
 
 //user/id
 router.get('/user/:id', withAuth, async (req, res) => {
+  console.log(req.params.id)
   try {
     const userData = await User.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ["id"],
-        },
-      ],
     });
+    console.log(userData)
     const user = userData.get({ plain: true });
     // Pass serialized data and session flag into template
     res.render('profile', {
@@ -28,7 +24,7 @@ router.get('/user/:id', withAuth, async (req, res) => {
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/user/:id');
+    res.redirect(`/user/${req.session.user_id}`);
     return;
   }
 
