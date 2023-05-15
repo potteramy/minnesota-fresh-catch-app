@@ -12,7 +12,7 @@ const signupFormHandler = async function(event) {
         lastname: lastNameEl.value,
         password: passwordEl.value,
       }),
-      // headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json' },
     });
   
     // if (response.ok) {
