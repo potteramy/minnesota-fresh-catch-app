@@ -16,7 +16,7 @@ const loginFormHandler = async (event) => {
 
     //if the response is true, load homepage
     if (response.ok) {
-      document.location.replace("/user/:id");
+      document.location.replace (`/user/${req.session.user_id}`);
     } else {
       alert("Failed to log in.");
     }
