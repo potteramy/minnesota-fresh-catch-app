@@ -1,26 +1,30 @@
 const newFormHandler = async function(event) {
-    event.preventDefault();
+  event.preventDefault();
   
-    //
-    // TODO: Adjust the following variables, selectors, etc. to fit our code.
-    //       Link this file to profile.handlebars?
+  //
+  // TODO: Adjust the following variables, selectors, etc. to fit our code.
+  //       Link this file to profile.handlebars
 
-    const title = document.querySelector('input[name="post-title"]').value;
-    const body = document.querySelector('textarea[name="post-body"]').value;
+  const speciesOfFish = document.querySelector('input[name="fishType"]').value;
+  const lengthOfFish = document.querySelector('input[name="fishLength"]').value;
+  const nameOfLake = document.querySelector('select[name="lakeName"]').value;
+  const dateCaught = document.querySelector('input[name="dateInput"]').value;
   
-    await fetch(`/api/post`, {
-      method: 'POST',
-      body: JSON.stringify({
-        title,
-        body,
-      }),
-      headers: { 'Content-Type': 'application/json' },
-    });
+  await fetch(`/api/post`, {
+    method: 'POST',
+    body: JSON.stringify({
+      speciesOfFish,
+      lengthOfFish,
+      nameOfLake,
+      dateCaught
+    }),
+    headers: { 'Content-Type': 'application/json' }
+  });
   
-    document.location.replace('/dashboard');
-  };
+  // document.location.replace('/dashboard');
+};
   
-  document
-    .querySelector('.newCatch')
-    .addEventListener('submit', newFormHandler);
+document
+  .querySelector('.newCatch')
+  .addEventListener('submit', newFormHandler);
   
