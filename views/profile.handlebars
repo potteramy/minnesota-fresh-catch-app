@@ -2,17 +2,38 @@
   <h2>{{first_name}}</h2>
 </div>
 
-<div class="card w-75">
+<div class="card w-100">
   <div class="card-body">
     <h5 class="card-title">Log a fresh catch!</h5>
     <div class="formContainer">
       <form class="newCatch">
-        <label for="fishType">type of fish:</label>
-        <input type="text" class="fishInput" name="fishType"/>
-        <label for="fishLength">length of fish in inches:</label>
-        <input type="number" class="lengthInput" name="fishLength"/>
-        <label for="lakeName">choose a lake:</label>
-        <select class="lake" name="lakeName">
+
+        <label for="fishType" class="form-label">type of fish:</label>
+        <select class="fishInput form-control" name="fishType">
+          <option value="bass">Bass</option>
+          <option value="bowfin">Bowfin/Dogfish</option>
+          <option value="burbot">Burbot</option>
+          <option value="catfish">Catfish</option>
+          <option value="herring">Cisco/Tullibe/Herring</option>
+          <option value="crappie">Crappie</option>
+          <option value="freshwater-drum">Freshwater drum</option>
+          <option value="sturgeon">Lake sturgeon</option>
+          <option value="long-nose-gar">Long-nose gar</option>
+          <option value="muskellunge">Muskellunge</option>
+          <option value="northern-pike">Northern pike</option>
+          <option value="salmon">Salmon</option>
+          <option value="sauger">Sauger</option>
+          <option value="sunfish">Sunfish</option>
+          <option value="trout">Trout</option>
+          <option value="walleye">Walleye</option>
+          <option value="white-sucker">White sucker</option>
+          <option value="yellow-perch">Yellow perch</option>
+        </select>
+        <label for="fishLength" class="form-label">length of fish in inches:</label>
+        <input type="number" class="lengthInput form-control" name="fishLength"/><br/>
+        <label for="lakeName" class="form-label">choose a lake:</label>
+        <select class="lake form-label" name="lakeName">
+
           <option value="Lake Harriet">Lake Harriet</option>
           <option value="Lake of the Isles">Lake of the Isles</option>
           <option value="Bde Maka Ska">Bde Maka Ska</option>
@@ -25,8 +46,8 @@
           <option value="Taft Lake">Taft Lake</option>
           <option value="Loring Pond">Loring Pond</option>
           <option value="Long Meadow Lake">Long Meadow Lake</option>
-        <label for="dateInput">date caught:</label>
-        <input type="date" class="dateInput" name="dateInput"/>
+        <label class="form-label" for="dateInput">date caught:</label>
+        <input type="date" class="dateInput form-control" name="dateInput"/>
         <button href="#" class="btn btn-primary" type="submit">Save My Catch!</button>
         </form> 
     </div>
