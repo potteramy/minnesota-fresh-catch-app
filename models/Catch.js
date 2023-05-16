@@ -34,6 +34,7 @@ Catch.init(
     },
     date_caught: {
       type: DataTypes.DATE,
+      defaultValue: DataTypes.DATEONLY,
       allowNull: false,
     },
   },

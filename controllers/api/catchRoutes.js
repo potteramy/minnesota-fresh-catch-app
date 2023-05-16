@@ -28,18 +28,18 @@ router.get("/:id", async (req, res) => {
 
 router.post("/", async (req, res) => {
   try {
-    console.log(req.body);
     const newCatch = await Catch.create({
       user_id: req.session.user_id,
       ...req.body,
     });
     console.log("newCatch:", newCatch);
 
-    return res.status(200).json(newCatch);
+    return res.status(200);
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
   }
+  res.redirect(`/user/${req.session.UserId}`);
 });
 
 //Delete a catch :(
