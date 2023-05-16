@@ -43,11 +43,14 @@ router.post("/logout", (req, res) => {
 });
 
 // Create a new user, then set session properties for user_id and logged_in, w/ logged_in property set to true
-router.post("/", async (req, res) => {
+router.post("/signup", async (req, res) => {
+  console.log(req.body)
   try {
     const userData = await User.create({
       email: req.body.email,
       password: req.body.password,
+      first_name: req.body.firstName,
+      last_name: req.body.lastName,
     });
 
     //session variable "logged_in"
@@ -58,6 +61,7 @@ router.post("/", async (req, res) => {
       res.status(200).json(userData);
     });
   } catch (err) {
+    console.log(err)
     res.status(400).json(err);
   }
 });
