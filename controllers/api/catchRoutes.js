@@ -17,25 +17,32 @@ router.get("/:id", (req, res) => {
 
 router.get("/:id", async (req, res) => {
   try {
-    console.log(req)
+    console.log(req.body);
     const catchData = await Catch.findAll(); // Fetch fishData from the database
 
     res.render("profile", { catchData }); // Render the template with fishData
   } catch (err) {
-    res.status(500).json({ error: "Failed to fetch catchData from the database" });
+    res
+      .status(500)
+      .json({ error: "Failed to fetch catchData from the database" });
   }
 });
-//
+
+//Save My Catch route
 router.post("/", async (req, res) => {
   try {
-    console.log(req.body) //working
-    const newCatch = await Catch.create(req.body);
-    console.log(newCatch)
+    console.log("req:", req.body); //working
+    const newCatch = await Catch.create({
+      user_id: req.session.user_id,
+      ...req.body,
+    });
+    console.log("newCatch:", newCatch);
 
     res.status(200).json(newCatch);
 
-    res.redirect("/")
+    res.redirect("/");
   } catch (err) {
+    console.log(err);
     res.status(400).json(err);
   }
 });
@@ -44,7 +51,7 @@ router.post("/", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   try {
     const catchData = await Catch.destroy({
-      where: { id: req.params.id }
+      where: { id: req.params.id },
     });
 
     if (!catchData) {
@@ -53,7 +60,6 @@ router.delete("/:id", async (req, res) => {
     }
 
     res.status(200).json(catchData);
-
   } catch (err) {
     res.status(500).json(err);
   }

@@ -1,9 +1,7 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
-
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class Catch extends Model {}
-
 
 Catch.init(
   {
@@ -11,32 +9,41 @@ Catch.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
     },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'User',
-        key: 'id',
-        unique: true
-      }
+        model: "User",
+        key: "id",
+        unique: true,
+      },
+    },
+    fish_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: "Fish",
+        key: "id",
+        unique: true,
+      },
     },
     fish_type: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     fish_length: {
-      type: DataTypes.FLOAT,
-      allowNull: false
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
     lake_name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     date_caught: {
       type: DataTypes.DATE,
-      allowNull: false
+      allowNull: false,
     },
   },
   {
@@ -44,7 +51,7 @@ Catch.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Catch'
+    modelName: "Catch",
   }
 );
 
