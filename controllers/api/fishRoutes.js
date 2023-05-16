@@ -9,12 +9,15 @@
 //   });
 // });
 
-// // Get a single fish
-// router.get("/:id", (req, res) => {
-//   Fish.findByPk(req.params.id).then((fishData) => {
-//     res.json(fishData);
-//   });
-// });
+//Get all fish
+router.get("/", (req, res) => {
+  Fish.findAll().then((fishData) => {
+    let fish = fishData.map((element) => element.get({ plain: true }));
+
+    console.log(fishData);
+    res.json(fish);
+  });
+});
 
 // //Create a fish
 // router.post('/', withAuth, async (req, res) => {

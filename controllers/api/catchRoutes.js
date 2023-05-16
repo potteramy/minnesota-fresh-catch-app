@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const Catch = require("../../models/Catch");
 const User = require("../../models/User");
+const Fish = require("../../models/Fish");
 
 //Get all catch records
 router.get("/", (req, res) => {
@@ -19,7 +20,8 @@ router.get("/:id", (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const catchData = await Catch.findAll(); // Fetch fishData from the database
-    res.render("profile", { catchData }); // Render the template with fishData
+    const fish = await Fish.findAll();
+    res.render("profile", { catchData, fish }); // Render the template with fishData
   } catch (err) {
     res
       .status(500)

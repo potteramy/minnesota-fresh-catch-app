@@ -48,7 +48,7 @@
           </select></br>
           <label for="dateInput" class="form-label">date caught:</label>
           <input type="date" class="dateInput form-control" name="dateInput" /></br>
-          <button class="btn btn-primary newCatch" type="submit">Save My Catch!</button>
+          <button href="#" class="btn btn-primary" type="submit">Save My Catch!</button>
         </form>
       </div>
     </div>
@@ -74,15 +74,20 @@
     </div>
     {{/each}}
   </div>
-  </div>
-  
-  <div class="chart">
-    <h5>Catches Chart</h5>
-    <div class="card">
-  <div class="card-body">
-  <canvas id="myChart"></canvas>
 </div>
+<div class="chart">
+  <h5>Catches Chart</h5>
+  <div class="card">
+    <div class="card-body">
+      <canvas id="myChart"></canvas>
+    </div>
   </div>
+
+<script src="/js/newCatch.js"></script>
+
+<script>document
+    .querySelector('.newCatch')
+    .addEventListener('submit', newFormHandler)</script>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
