@@ -27,6 +27,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+//Save My Catch -> click event routes here
 router.post("/", async (req, res) => {
   try {
     const newCatch = await Catch.create({

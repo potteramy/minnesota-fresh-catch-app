@@ -15,8 +15,8 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      const body = await response.json()
-      const id = body.user.id
+      const body = await response.json();
+      const id = body.user.id;
       document.location.replace(`/user/${id}`);
     } else {
       alert("Failed to log in.");
@@ -27,22 +27,22 @@ const loginFormHandler = async (event) => {
 const logoutHandler = async (event) => {
   try {
     const response = await fetch("/api/user/logout", {
-      method: 'POST', 
+      method: "POST",
       credentials: "same-origin",
     });
 
     if (response.ok) {
       document.location.replace("/login");
     } else {
-      console.error("Login failed", error)
+      console.error("Login failed", error);
     }
   } catch (error) {
-    console.error("Logout failed", error)
+    console.error("Logout failed", error);
   }
 };
 
 async function signUpFormHandler(event) {
-  event.preventDefault();
+  // event.preventDefault();
 
   const firstName = document.querySelector("#signup_first_name").value;
   const lastName = document.querySelector("#signup_last_name").value;
@@ -54,16 +54,13 @@ async function signUpFormHandler(event) {
     method: "POST",
     body: JSON.stringify({ firstName, lastName, email, password }),
     headers: { "Content-Type": "application/json" },
-  },
-  );
+  });
 
   if (response.ok) {
-    const body = await response.json()
-    const id = body.id
+    const body = await response.json();
+    const id = body.id;
     document.location.replace(`/user/${id}`);
   } else {
     alert("Failed to sign up."); //working
   }
 }
-
-
