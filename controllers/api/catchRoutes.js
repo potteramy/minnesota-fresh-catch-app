@@ -17,7 +17,7 @@ router.get("/:id", (req, res) => {
 
 router.get("/:id", async (req, res) => {
   try {
-    console.log(req);
+    console.log(req); //working
     const catchData = await Catch.findAll(); // Fetch fishData from the database
 
     res.render("profile", { catchData }); // Render the template with fishData
