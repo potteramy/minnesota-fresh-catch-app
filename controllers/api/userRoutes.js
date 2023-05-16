@@ -5,31 +5,26 @@ const User = require("../../models/User");
 router.post("/login", async (req, res) => {
   console.log("Login route action called");
   try {
-    
     const userData = await User.findOne({ where: { email: req.body.email } });
     const user = userData.get({ plain: true });
-    console.log("test")
+    console.log("test");
 
     if (!user.email) {
-      res
-        .status(400)
-        .json({ message: "Incorrect email, please try again" });
+      res.status(400).json({ message: "Incorrect email, please try again" });
       return;
     }
 
     // const validPassword = await userData.checkPassword(req.body.password);
 
     if (!user.password) {
-      res
-        .status(400)
-        .json({ message: "Incorrect password, please try again" });
+      res.status(400).json({ message: "Incorrect password, please try again" });
       return;
     }
 
     req.session.save(() => {
       req.session.user_id = user.id;
       req.session.logged_in = true;
-  
+
       res.json({ user: user, message: "You are now logged in!" });
     });
   } catch (err) {
