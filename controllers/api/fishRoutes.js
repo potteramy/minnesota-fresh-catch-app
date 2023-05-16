@@ -6,7 +6,10 @@ const withAuth = require("../../utils/auth")
 //Get all fish
 router.get("/", (req, res) => {
   Fish.findAll().then((fishData) => {
-    res.json(fishData);
+    let fish = fishData.map(element => element.get({plain: true}));
+
+    console.log(fishData);
+    res.json(fish);
   });
 });
 
