@@ -33,7 +33,6 @@ router.post("/", async (req, res) => {
       user_id: req.session.user_id,
       ...req.body,
     });
-    console.log("newCatch:", newCatch);
 
     return res.status(200);
   } catch (err) {
