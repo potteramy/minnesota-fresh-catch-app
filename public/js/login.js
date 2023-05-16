@@ -41,7 +41,7 @@ const logoutHandler = async (event) => {
   }
 };
 
-async function signupFormHandler(event) {
+async function signUpFormHandler(event) {
   event.preventDefault();
 
   const firstName = document.querySelector("#signup_first_name").value;
@@ -50,19 +50,20 @@ async function signupFormHandler(event) {
   const password = document.querySelector("#signup_password").value;
   console.log(firstName);
 
-  const response = await fetch("/api/user", {
+  const response = await fetch("/api/user/signup", {
     method: "POST",
     body: JSON.stringify({ firstName, lastName, email, password }),
     headers: { "Content-Type": "application/json" },
-  });
+  },
+  );
 
   if (response.ok) {
-    document.location.replace(`/user/${req.session.user_id}`);
+    const body = await response.json()
+    const id = body.id
+    document.location.replace(`/user/${id}`);
   } else {
     alert("Failed to sign up."); //working
   }
 }
 
-document
-  .querySelector(".signup-form")
-  .addEventListener("submit", signupFormHandler);
+

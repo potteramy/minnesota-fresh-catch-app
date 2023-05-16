@@ -28,7 +28,7 @@
     <input type="password" class="form-control" id="signup_password" name="password" required />
     <br/>
     
-    <button class="btn btn-success" href="/user/:id" type="submit" value="submit" role="button">Sign up</button>
+    <button class="btn btn-success" id="signUp" href="/user/:id" type="submit" value="submit" role="button">Sign up</button>
   </form>
   <script src="/js/login.js"></script>
 </div>
@@ -36,4 +36,5 @@
 <script>
 
   document.getElementById("login").addEventListener("click", loginFormHandler)
+  document.getElementById("signUp").addEventListener("click", signUpFormHandler)
 </script>
