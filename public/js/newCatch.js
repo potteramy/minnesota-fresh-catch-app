@@ -20,25 +20,25 @@ const newFormHandler = async function (event) {
     }),
     headers: { "Content-Type": "application/json" },
   });
-
   // document.location.replace('/dashboard');
 };
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("test");
-  // Perform an AJAX request to fetch the data from the server
-  fetch("/api/user/:id")
-    .then(function (response) {
-      console.log(response);
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-      //   // Process the retrieved data
-      //   // Example: Assuming there is an element with ID "data-container" to display the data
-      //   var dataContainer = document.getElementById("data-container"); //Question on the "data-container"
-      //   dataContainer.innerHTML = generateDataHtml(data);
-    })
-    .catch(function (error) {
-      console.log("Error:", error);
-    });
-});
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   console.log("test");
+//   // Perform an AJAX request to fetch the data from the server
+//   fetch("/api/user/:id")
+//     .then(function (response) {
+//       console.log(response);
+//       return response.json();
+//     })
+//     .then(function (data) {
+//       console.log(data);
+//       //   // Process the retrieved data
+//       //   // Example: Assuming there is an element with ID "data-container" to display the data
+//       //   var dataContainer = document.getElementById("data-container"); //Question on the "data-container"
+//       //   dataContainer.innerHTML = generateDataHtml(data);
+//     })
+//     .catch(function (error) {
+//       console.log("Error:", error);
+//     });
+// });
