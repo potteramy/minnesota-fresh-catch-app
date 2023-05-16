@@ -3,7 +3,7 @@ const { User } = require('../models');
 const withAuth = require('../utils/auth');
 const Catch = require("../models/Catch");
 
-//user/id
+//user/id This is for the "Previous Catches" on the Profile page (Working do not touch)
 router.get('/user/:id', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.params.id, {
