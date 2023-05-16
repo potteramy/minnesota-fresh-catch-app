@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const Catch = require("../../models/Catch");
+const User = require("../../models/User");
 
 //Get all catch records
 router.get("/", (req, res) => {
@@ -36,7 +37,6 @@ router.post("/", async (req, res) => {
 
     return res.status(200);
   } catch (err) {
-    console.log(err);
     res.status(400).json(err);
   }
   res.redirect(`/user/${req.session.UserId}`);
