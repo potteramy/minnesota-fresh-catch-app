@@ -3,13 +3,8 @@ const User = require("../models/User");
 const withAuth = require("../utils/auth");
 const Catch = require("../models/Catch");
 
-<<<<<<< Updated upstream
 //user/id This is for the "Previous Catches" on the Profile page (Working do not touch)
-router.get('/user/:id', withAuth, async (req, res) => {
-=======
-//user/id
 router.get("/user/:id", withAuth, async (req, res) => {
->>>>>>> Stashed changes
   try {
     const userData = await User.findByPk(req.params.id, {});
     const user = userData.get({ plain: true });
