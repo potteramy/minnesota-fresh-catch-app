@@ -73,18 +73,22 @@
     </div>
     {{/each}}
   </div>
+  </div>
+  
   <div class="chart">
     <h5>Catches Chart</h5>
-  </div>
+    <div class="card">
+  <div class="card-body">
+  <canvas id="myChart"></canvas>
 </div>
+  </div>
+
 <script src="/js/newCatch.js"></script>
 
 <script>document
     .querySelector('.newCatch')
     .addEventListener('submit', newFormHandler);</script>
-<div>
-  <canvas id="myChart"></canvas>
-</div>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
   const ctx = document.getElementById('myChart');
