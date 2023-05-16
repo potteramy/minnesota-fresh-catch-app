@@ -17,7 +17,7 @@ router.get("/:id", (req, res) => {
 
 router.get("/:id", async (req, res) => {
   try {
-    console.log(req);
+    //working
     const catchData = await Catch.findAll(); // Fetch fishData from the database
 
     res.render("profile", { catchData }); // Render the template with fishData
@@ -31,14 +31,14 @@ router.get("/:id", async (req, res) => {
 //
 router.post("/", async (req, res) => {
   try {
-    console.log("req:", req.body); //working
+    console.log(req.body); //working
     const newCatch = await Catch.create({
       user_id: req.session.user_id,
       ...req.body,
     });
     console.log("newCatch:", newCatch);
 
-    res.status(200).json(newCatch);
+    return res.status(200).json(newCatch);
 
     res.redirect("/");
   } catch (err) {
