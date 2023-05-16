@@ -9,6 +9,7 @@ body {
   background-size: cover;
   height: 100%;
   color: white;
+  margin-bottom: 50px;
 }
 .w-100 {
   color: black;
@@ -19,4 +20,29 @@ body {
 
 footer {
 color:  white;
+}
+
+.grid {
+  display: flex;
+
+}
+.card {
+  width: 50%;
+  color:black;
+  padding: 10px;
+
+}
+.catches {
+  width: 50%;
+  padding: 10px;
+
+}
+
+@media screen and (max-width: 992px) {
+.catches {
+width: 100%;
+} 
+.card {
+  width: 100%;
+  } 
 }
