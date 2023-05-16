@@ -1,10 +1,4 @@
 const newFormHandler = async function (event) {
-  event.preventDefault();
-
-  //
-  // TODO: Adjust the following variables, selectors, etc. to fit our code.
-  //       Link this file to profile.handlebars
-
   const fish_type = document.querySelector('select[name="fishType"]').value;
   const fish_length = document.querySelector('input[name="fishLength"]').value;
   const lake_name = document.querySelector('select[name="lakeName"]').value;
@@ -20,7 +14,6 @@ const newFormHandler = async function (event) {
     }),
     headers: { "Content-Type": "application/json" },
   });
-  document.location.replace("back");
 };
 
 // document.addEventListener("DOMContentLoaded", function () {
