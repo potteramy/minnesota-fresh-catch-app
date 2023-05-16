@@ -1,76 +1,109 @@
 <div class="name">
   <h2>{{first_name}}</h2>
 </div>
+<div class="grid">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Log a fresh catch!</h5></br>
+      <div class="formContainer">
+        <form class="newCatch">
 
-<div class="card w-100">
-  <div class="card-body">
-    <h5 class="card-title">Log a fresh catch!</h5></br>
-    <div class="formContainer">
-      <form class="newCatch">
+          <label for="fishType" class="form-label">type of fish:</label>
+          <select class="fishInput form-control" name="fishType"></br>
+            <option value="bass">Bass</option>
+            <option value="dog fish">Dogfish</option>
+            <option value="burbot">Burbot</option>
+            <option value="catfish">Catfish</option>
+            <option value="herring">Herring</option>
+            <option value="crappie">Crappie</option>
+            <option value="freshwater drum">Freshwater drum</option>
+            <option value="sturgeon">Lake sturgeon</option>
+            <option value="long-nose gar">Long-nose gar</option>
+            <option value="muskellunge">Muskellunge</option>
+            <option value="northern pike">Northern pike</option>
+            <option value="salmon">Salmon</option>
+            <option value="sauger">Sauger</option>
+            <option value="sunfish">Sunfish</option>
+            <option value="trout">Trout</option>
+            <option value="walleye">Walleye</option>
+            <option value="white sucker">White sucker</option>
+            <option value="yellow perch">Yellow perch</option>
+          </select></br>
+          <label for="fishLength" class="form-label">length of fish in inches:</label>
+          <input type="number" class="lengthInput form-control" name="fishLength" /></br>
+          <label for="lakeName" class="form-label">choose a lake:</label>
+          <select class="lake form-control" name="lakeName">
+            <option value="Lake Harriet">Lake Harriet</option>
+            <option value="Lake of the Isles">Lake of the Isles</option>
+            <option value="Bde Maka Ska">Bde Maka Ska</option>
+            <option value="Cedar Lake">Cedar Lake</option>
+            <option value="Lake Nokomis">Lake Nokomis</option>
+            <option value="Brownie Lake">Brownie Lake</option>
+            <option value="Lake Hiawatha">Lake Hiawatha</option>
+            <option value="Wirth Lake">Wirth Lake</option>
+            <option value="Powderhorn Lake">Powderhorn Lake</option>
+            <option value="Taft Lake">Taft Lake</option>
+            <option value="Loring Pond">Loring Pond</option>
+            <option value="Long Meadow Lake">Long Meadow Lake</option>
+          </select></br>
+          <label for="dateInput" class="form-label">date caught:</label>
+          <input type="date" class="dateInput form-control" name="dateInput" /></br>
+          <button href="#" class="btn btn-primary" type="submit">Save My Catch!</button>
+        </form>
+      </div>
+    </div>
 
-        <label for="fishType" class="form-label">type of fish:</label>
-        <select class="fishInput form-control" name="fishType"></br>
-          <option value="bass">Bass</option>
-          <option value="bowfin">Bowfin/Dogfish</option>
-          <option value="burbot">Burbot</option>
-          <option value="catfish">Catfish</option>
-          <option value="herring">Cisco/Tullibe/Herring</option>
-          <option value="crappie">Crappie</option>
-          <option value="freshwater-drum">Freshwater drum</option>
-          <option value="sturgeon">Lake sturgeon</option>
-          <option value="long-nose-gar">Long-nose gar</option>
-          <option value="muskellunge">Muskellunge</option>
-          <option value="northern-pike">Northern pike</option>
-          <option value="salmon">Salmon</option>
-          <option value="sauger">Sauger</option>
-          <option value="sunfish">Sunfish</option>
-          <option value="trout">Trout</option>
-          <option value="walleye">Walleye</option>
-          <option value="white-sucker">White sucker</option>
-          <option value="yellow-perch">Yellow perch</option>
-        </select></br>
-        <label for="fishLength" class="form-label">length of fish in inches:</label>
-        <input type="number" class="lengthInput form-control" name="fishLength"/></br>
-        <label for="lakeName" class="form-label">choose a lake:</label>
-        <select class="lake form-control" name="lakeName">
-          <option value="Lake Harriet">Lake Harriet</option>
-          <option value="Lake of the Isles">Lake of the Isles</option>
-          <option value="Bde Maka Ska">Bde Maka Ska</option>
-          <option value="Cedar Lake">Cedar Lake</option>
-          <option value="Lake Nokomis">Lake Nokomis</option>
-          <option value="Brownie Lake">Brownie Lake</option>
-          <option value="Lake Hiawatha">Lake Hiawatha</option>
-          <option value="Wirth Lake">Wirth Lake</option>
-          <option value="Powderhorn Lake">Powderhorn Lake</option>
-          <option value="Taft Lake">Taft Lake</option>
-          <option value="Loring Pond">Loring Pond</option>
-          <option value="Long Meadow Lake">Long Meadow Lake</option>
-        </select></br>
-        <label for="dateInput"class="form-label">date caught:</label>
-        <input type="date" class="dateInput form-control" name="dateInput"/></br>
-        <button href="#" class="btn btn-primary" type="submit">Save My Catch!</button>
-        </form> 
-    </div>
   </div>
-  
-</div>
-<h5>Previous Catches:</h5>
-{{#each catchData}}
-<div class="card catchList">
-  <div class="card-body previousCatches" style="color:black">
-  {{!-- {{#if (eq user_id)}} --}}
-    <div>
-      <p>Species: {{fish_type}}</p>
-      <p>Length: {{fish_length}} inches</p>
-      <p>Lake: {{lake_name}}</p>
-      <p>Caught on: {{date_caught}}</p>
+
+
+  <div class="catches">
+    <h5>Previous Catches:</h5>
+    {{#each catchData}}
+    <div class="card catchList">
+      <div class="card-body previousCatches" style="color:black">
+        {{!-- {{#if (eq user_id)}} --}}
+        <div>
+          <p>Species: {{fish_type}}</p>
+          <p>Length: {{fish_length}} inches</p>
+          <p>Lake: {{lake_name}}</p>
+          <p>Caught on: {{date_caught}}</p>
+        </div>
+        {{!-- {{/if}} --}}
+      </div>
     </div>
-  {{!-- {{/if}} --}}
+    {{/each}}
+  </div>
+  <div class="chart">
+    <h5>Catches Chart</h5>
   </div>
 </div>
-{{/each}}
 <script src="/js/newCatch.js"></script>
 
 <script>document
-  .querySelector('.newCatch')
-  .addEventListener('submit', newFormHandler);</script>
+    .querySelector('.newCatch')
+    .addEventListener('submit', newFormHandler);</script>
+<div>
+  <canvas id="myChart"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('myChart');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Walleye', 'Northern Pike', 'Bass', 'Crappie', 'Perch', 'Sunfish'],
+      datasets: [{
+        label: '# of Catches',
+        data: [12, 4, 13, 5, 7, 14],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
