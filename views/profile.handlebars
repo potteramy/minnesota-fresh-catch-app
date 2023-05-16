@@ -57,15 +57,15 @@
 <h5>Previous Catches:</h5>
 {{#each catchData}}
 <div class="card catchList">
-  <div class="card-body previousCatches">
-  {{#if (eq user_id)}}
+  <div class="card-body previousCatches" style="color:black">
+  {{!-- {{#if (eq user_id)}} --}}
     <div>
       <p>Species: {{fish_type}}</p>
       <p>Length: {{fish_length}} inches</p>
       <p>Lake: {{lake_name}}</p>
       <p>Caught on: {{date_caught}}</p>
     </div>
-  {{/if}}
+  {{!-- {{/if}} --}}
   </div>
 </div>
 {{/each}}

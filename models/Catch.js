@@ -22,15 +22,6 @@ Catch.init(
         unique: true
       }
     },
-    // fish_id: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    //   references: {
-    //     model: 'Fish',
-    //     key: 'id',
-    //     unique: true
-    //   }
-    // },
     fish_type: {
       type: DataTypes.STRING,
       allowNull: false
