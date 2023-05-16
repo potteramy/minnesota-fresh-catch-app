@@ -24,6 +24,23 @@ const loginFormHandler = async (event) => {
   }
 };
 
+const logoutHandler = async (event) => {
+  try {
+    const response = await fetch("/api/user/logout", {
+      method: 'POST', 
+      credentials: "same-origin",
+    });
+
+    if (response.ok) {
+      document.location.replace("/login");
+    } else {
+      console.error("Login failed", error)
+    }
+  } catch (error) {
+    console.error("Logout failed", error)
+  }
+};
+
 async function signupFormHandler(event) {
   event.preventDefault();
 
