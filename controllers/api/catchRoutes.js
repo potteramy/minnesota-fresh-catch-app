@@ -15,14 +15,16 @@ router.get("/:id", (req, res) => {
   });
 });
 
-//Create a catch record
+//
 router.post("/", async (req, res) => {
   try {
-    const newCatch = await Catch.create({
-      ...req.body
-    });
+    console.log(req.body) //working
+    const newCatch = await Catch.create(req.body);
+    console.log(newCatch)
 
     res.status(200).json(newCatch);
+
+    res.redirect("/")
   } catch (err) {
     res.status(400).json(err);
   }

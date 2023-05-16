@@ -4,11 +4,9 @@ const withAuth = require('../utils/auth');
 
 //user/id
 router.get('/user/:id', withAuth, async (req, res) => {
-  console.log(req.params.id)
   try {
     const userData = await User.findByPk(req.params.id, {
     });
-    console.log(userData)
     const user = userData.get({ plain: true });
     // Pass serialized data and session flag into template
     res.render('profile', {

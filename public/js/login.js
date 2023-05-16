@@ -14,9 +14,8 @@ const loginFormHandler = async (event) => {
       headers: { "Content-Type": "application/json" },
     });
 
-    //if the response is true, load homepage
     if (response.ok) {
-      document.location.replace (`/user/${req.session.user_id}`);
+      document.location.replace(`/user/${req.session.user_id}`);
     } else {
       alert("Failed to log in.");
     }
@@ -44,10 +43,6 @@ async function signupFormHandler(event) {
     alert("Failed to sign up."); //working
   }
 }
-
-// document
-//   .querySelector('.login')
-//   .addEventListener('submit', loginFormHandler);
 
 document
   .querySelector(".signup-form")
