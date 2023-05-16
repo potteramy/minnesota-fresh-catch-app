@@ -27,7 +27,7 @@ color:  white;
 
 }
 .card {
-  width: 50%;
+  /* width: 50%; */
   color:black;
   padding: 10px;
 
@@ -37,12 +37,22 @@ color:  white;
   padding: 10px;
 
 }
+/* .chart {
+ width:50%;
+ flex: none;
+} */
 
 @media screen and (max-width: 992px) {
+  .grid {
+    display:block;
+  }
 .catches {
 width: 100%;
 } 
 .card {
   width: 100%;
   } 
+.chart {
+  width: 100%;
+}
 }
