@@ -10,15 +10,14 @@ router.post("/login", async (req, res) => {
     console.log("test");
 
     if (!user.email) {
-      res.status(400).json({ message: "Incorrect email, please try again" });
-      return;
+      return res.status(400).json({ message: "Incorrect email, please try again" });
+      
     }
 
     // const validPassword = await userData.checkPassword(req.body.password);
 
     if (!user.password) {
-      res.status(400).json({ message: "Incorrect password, please try again" });
-      return;
+      return res.status(400).json({ message: "Incorrect password, please try again" });
     }
 
     req.session.save(() => {

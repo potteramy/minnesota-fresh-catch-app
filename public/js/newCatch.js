@@ -1,4 +1,5 @@
 const newFormHandler = async function (event) {
+  
   const fish_type = document.querySelector('select[name="fishType"]').value;
   const fish_length = document.querySelector('input[name="fishLength"]').value;
   const lake_name = document.querySelector('select[name="lakeName"]').value;
