@@ -36,11 +36,15 @@ router.post("/", async (req, res) => {
       ...req.body,
     });
 
-    return res.status(200);
+    console.log(newCatch)
+    console.log("USER ID", req.session.user_id)
+    //res.redirect(`/user/${req.session.user_id}`);
+
+    return res.status(200).json({ status: "success"});
   } catch (err) {
+    console.log("ERROR CATCH FISH", err.message)
     res.status(400).json(err);
   }
-  res.redirect(`/user/${req.session.UserId}`);
 });
 
 //Delete a catch :(
