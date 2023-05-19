@@ -4,30 +4,30 @@ const User = require("../../models/User");
 const Fish = require("../../models/Fish");
 
 //Get all catch records
-router.get("/", (req, res) => {
-  Catch.findAll().then((catchData) => {
-    res.json(catchData);
-  });
-});
+// router.get("/", (req, res) => {
+//   Catch.findAll().then((catchData) => {
+//     res.json(catchData);
+//   });
+// });
 
 // Get a single catch record
-router.get("/:id", (req, res) => {
-  Catch.findByPk(req.params.id).then((catchData) => {
-    res.json(catchData);
-  });
-});
+// router.get("/:id", (req, res) => {
+//   Catch.findByPk(req.params.id).then((catchData) => {
+//     res.json(catchData);
+//   });
+// });
 
-router.get("/:id", async (req, res) => {
-  try {
-    const catchData = await Catch.findAll(); // Fetch fishData from the database
-    const fish = await Fish.findAll();
-    res.render("profile", { catchData, fish }); // Render the template with fishData
-  } catch (err) {
-    res
-      .status(500)
-      .json({ error: "Failed to fetch catchData from the database" });
-  }
-});
+// router.get("/:id", async (req, res) => {
+//   try {
+//     const catchData = await Catch.findAll(); // Fetch fishData from the database
+//     const fish = await Fish.findAll();
+//     res.render("profile", { catchData, fish }); // Render the template with fishData
+//   } catch (err) {
+//     res
+//       .status(500)
+//       .json({ error: "Failed to fetch catchData from the database" });
+//   }
+// });
 
 router.post("/", async (req, res) => {
   try {
@@ -44,6 +44,7 @@ router.post("/", async (req, res) => {
 });
 
 //Delete a catch :(
+/*
 router.delete("/:id", async (req, res) => {
   try {
     const catchData = await Catch.destroy({
@@ -60,5 +61,5 @@ router.delete("/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+*/
 module.exports = router;
