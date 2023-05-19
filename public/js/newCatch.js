@@ -1,11 +1,11 @@
 const newFormHandler = async function (event) {
-  
+  event.preventDefault();
   const fish_type = document.querySelector('select[name="fishType"]').value;
   const fish_length = document.querySelector('input[name="fishLength"]').value;
   const lake_name = document.querySelector('select[name="lakeName"]').value;
   const date_caught = document.querySelector('input[name="dateInput"]').value;
 
-  await fetch("/api/catch", {
+  const resp = await fetch("/api/catch", {
     method: "POST",
     body: JSON.stringify({
       fish_type,
@@ -15,6 +15,12 @@ const newFormHandler = async function (event) {
     }),
     headers: { "Content-Type": "application/json" },
   });
+
+  const result = await resp.json()
+  if( result.status === "success" ){
+    console.log("should reload")
+    window.location.reload()
+  }
 };
 
 // document.addEventListener("DOMContentLoaded", function () {
